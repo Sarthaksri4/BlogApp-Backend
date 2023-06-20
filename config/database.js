@@ -12,7 +12,7 @@ const dbConnect = () => {
         console.log("Issue in DB Connection");
         console.error(error.message);
         
-        process.exit(1);   //return O type
+        process.exit(1);
     } );
 }
 

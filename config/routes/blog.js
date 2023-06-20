@@ -1,21 +1,12 @@
-// const express = require("express");
-// const router = express.Router();
-
-
-// //Import Controller
-// const { dummyLink, likePost, unlikePost } = require("../controllers/LikeController");
-
-// //Mapping Create
-// router.get("/dummyroute", dummyLink);
 
 const express = require('express');
 const router = express.Router();
 
 // Import Controller 
-const {createComment} = require("../controllers/commentController");
+const {dummyLink} = require("../controllers/likeController");
 
 // Mapping Create
-router.post("/comments/create",createComment)
+router.post("/dummyroute",dummyLink)
 
 // Export Controller
 module.exports = router;
