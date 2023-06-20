@@ -1,8 +1,23 @@
-const express = require('express');
+const express = require('express'); 
 const app = express();
 
-app.listen(3001,()=>{
-    console.log("App is running successfully");
+require("dotenv").config();
+const PORT = process.env.PORT || 3000;
+
+// middleware 
+app.use(express.json());    //app jo hai wo use krega express.json ko
+
+const blog = require('./routes/blog');
+
+// mount 
+app.use("/api/v1",blog);  
+
+const dbConnect = require('./config/database');
+dbConnect();
+
+// Start Server 
+app.listen(PORT,()=>{
+    console.log("App is Running at the",PORT);
 })
 
 // Default Route 
